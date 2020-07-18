@@ -1,7 +1,7 @@
 <?php 
 //call database and submit the dates to function createPerson 
-require_once '../connection.php';
-$create = new users("testt","localhost","root","");
+require_once 'createMethod.php';
+$createp = new create; 
 if (isset($_POST['submit']))
 {
             $new_user = array(
@@ -24,24 +24,5 @@ if (isset($_POST['submit']))
                 echo "DATA CANNOT BE EMPTY";
             }   
 }
-?>
-<?php 
-include_once 'templates/header.php';
-?>
-        <form method="post">
-            <label for="firstname">First name</label>
-            <input type="text" name="firstname" id="firstname">
-            <label for="lastname">Last name</label>
-            <input type="text" name="lastname" id="lastname">
-            <label for="email">Email Address</label>
-            <input type="text" name="email" id="email">
-            <label for="age">Age</label>
-            <input type="text" name="age" id="age">
-            <label for="locations">Location</label>
-            <input type="text" name="locations" id="locations">
-            <input type="submit" name="submit" id="submit" value="submit">
-        </form>
-        <a href="index.php">Back to Home</a>
-<?php
-include_once 'templates/footer.php';
-?>
+
+include_once 'templates/create.html';
