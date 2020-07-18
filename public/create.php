@@ -14,7 +14,7 @@ if (isset($_POST['submit']))
             if(!empty($new_user["firstname"]) & !empty($new_user["lastname"]) & !empty($new_user["email"]) & !empty($new_user['age']) & !empty($new_user["locations"]))
             {   
                 $email = $_POST['email'];
-                if(!$create->createPerson($new_user,$email))
+                if(!$createp->createPerson($new_user,$email))
                 {
                     echo "email ja existe";
                 }
