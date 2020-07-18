@@ -16,7 +16,7 @@ if (isset($_POST['submit']))
                 $email = $_POST['email'];
                 if(!$createp->createPerson($new_user,$email))
                 {
-                    echo "email ja existe";
+                    echo "this email already exists";
                 }
             }  
             else

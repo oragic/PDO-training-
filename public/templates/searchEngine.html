@@ -1,0 +1,10 @@
+<h2>Find user based on location</h2>
+
+<form method="post">
+  <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
+  <label for="locations">Location</label>
+  <input type="text" id="locations" name="locations">
+  <input type="submit" name="submit" value="View Results">
+</form>
+
+<a href="index.php">Back to home</a>
