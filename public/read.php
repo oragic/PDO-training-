@@ -23,7 +23,8 @@ require_once 'readMethod.php';
             $firstname = $row["firstname"];
             $lastname = $row["lastname"];
             $email = $row["email"];
-            $person = "person:$firstname $lastname<br>email:$email<br><br>";
+            $id = $row["id"];
+            $person = "person:$firstname $lastname<br>email:$email<br><br><a href='update.php?id=$id'>Edit</a>";
             
             $template = file_get_contents('templates/read.html');
             $tplfinal = str_replace("{{person}}",$person,$template);
