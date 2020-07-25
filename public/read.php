@@ -10,10 +10,6 @@ require_once 'readMethod.php';
     $readData =$read->readData($locations);
 }        
 
-?>
-
-<?php include_once 'templates/header.html'; ?>
-<?php
     if(isset($_POST['submit']))
     {
         foreach ($readData as $row)
@@ -22,13 +18,15 @@ require_once 'readMethod.php';
             $lastname = $row["lastname"];
             $email = $row["email"];
             $id = $row["id"];
-            $person = "person:$firstname $lastname<br>email:$email<br><br><a href='update.php?id=$id'>Edit</a>";
+            $person = "person:$firstname $lastname<br>email:$email<br><br><a href='update.php?id=$id'>Edit</a> <a href='delete.php?id=$id'>Delete</a>";
+
             
             $template = file_get_contents('templates/read.html');
             $tplfinal = str_replace("{{person}}",$person,$template);
             echo $tplfinal;
         }        
     }
+ include_once 'templates/searchEngine.html';
 ?>
-<?php include_once 'templates/searchEngine.html';?>
-<?php include_once 'templates/footer.html'; ?>
+
+

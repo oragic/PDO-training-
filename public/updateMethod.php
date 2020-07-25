@@ -33,7 +33,5 @@ class updateMethod
         $statement->bindValue(":age",$age);
         $statement->bindValue(":locations",$locations);
         $statement->execute();
-
-        echo "debug";
     }
 }

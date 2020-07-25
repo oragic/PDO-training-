@@ -28,6 +28,8 @@ if(isset($_GET['id']))
      <label for='locations'>Location</label>
      <input type='text' name='locations' id='locations' value='$locations'>
      <input type='submit' name='submit' id='submit' value='submit'>
+     <br><br>
+     <a href='index.php'>Back to Home</a>
      ";
 
      $template = file_get_contents('templates/update.html');
