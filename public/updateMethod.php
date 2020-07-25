@@ -15,14 +15,25 @@ class updateMethod
         return $result;
     }
 
-    public function senddata($firstname,$lastname,$email,$age,$locations)
-    {   $sql = "INSERT INTO users(firstname,lastname,email,age,locations) VALUES (:firstname,:lastname,:email,:age,:locations)";
+    public function senddata($id,$firstname,$lastname,$email,$age,$locations)
+    {   $sql = "UPDATE users 
+          SET id = :id, 
+          firstname = :firstname, 
+          lastname = :lastname, 
+          email = :email, 
+          age = :age, 
+          locations = :locations 
+          WHERE id = :id";
+
         $statement = $this->con->prepare($sql);
-        $statement->bindValue(":firstname,$firstname");
+        $statement->bindValue(":id",$id);
+        $statement->bindValue(":firstname",$firstname);
         $statement->bindValue(":lastname",$lastname);
         $statement->bindValue(":email",$email);
         $statement->bindValue(":age",$age);
         $statement->bindValue(":locations",$locations);
         $statement->execute();
+
+        echo "debug";
     }
 }

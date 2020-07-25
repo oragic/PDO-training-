@@ -8,8 +8,6 @@ require_once 'readMethod.php';
     $locations = $_POST['locations'];
     $read = new readMethod;
     $readData =$read->readData($locations);
-    print_r($readData);
-
 }        
 
 ?>

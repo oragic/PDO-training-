@@ -9,7 +9,6 @@ class readMethod
 {
     public function readData($locations)
     {
-
              if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
              {
                  try  
@@ -31,8 +30,7 @@ class readMethod
                  {
                  echo $sql . "<br>" . $error->getMessage();
                  }
-             }
-        
+             }        
     }
 
 }

@@ -35,7 +35,7 @@ if(isset($_GET['id']))
      echo $tplupdate;
 
    } 
-   if(isset($_GET['submit']))
+   if(isset($_POST['submit']))
    {
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
@@ -43,6 +43,6 @@ if(isset($_GET['id']))
     $age = $_POST['age'];
     $locations = $_POST['locations'];
 
-    $data->senddata($firstname,$lastname,$email,$age,$locations);    
+    $data->senddata($id,$firstname,$lastname,$email,$age,$locations);    
    }
 }
