@@ -1,10 +1,12 @@
 <?php 
 require_once '../common.php';
 require_once 'updateMethod.php';
+
+$data = new updateMethod;
+
 if(isset($_GET['id']))
 {
    $id = $_GET['id']; 
-   $data = new updateMethod;
    $showdata = $data->showData($id);
    foreach ($showdata as $row)
    {
@@ -33,4 +35,14 @@ if(isset($_GET['id']))
      echo $tplupdate;
 
    } 
+   if(isset($_GET['submit']))
+   {
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+    $age = $_POST['age'];
+    $locations = $_POST['locations'];
+
+    $data->senddata($firstname,$lastname,$email,$age,$locations);    
+   }
 }
